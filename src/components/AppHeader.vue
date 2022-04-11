@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-sm-12">
-            <h3>Quoted Added</h3>
+            <h3>Quote Added</h3>
             <div class="progress">
                 <div class="progress-bar" :style="{width : (quoteCount/maxQuotes) * 100 + '%'}">
                     {{quoteCount}} / {{maxQuotes}}
