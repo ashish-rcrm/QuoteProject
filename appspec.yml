@@ -3,6 +3,7 @@ os : linux
 files :
   - source : /index.html
    destination : /var/www/html
+  #  this is where httpd expects our index file to be
 hooks:
   BeforeInstall:
     - location : scripts/install_dependencies.sh
@@ -18,12 +19,12 @@ hooks:
   ApplicationStart:
     - location : scripts/start_server.sh
       timeout : 300
-      runsas : root
+      runas : root
    
   ApplicationStop:
     - location : scripts/stop_server.sh
       timeout : 300
-      runsas : root
+      runas : root
     
    ValidateService:
     - location : scripts/validate_service.sh
