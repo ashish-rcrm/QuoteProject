@@ -1,8 +1,6 @@
 version : 0.2
 phases : 
   install:
-    runtime-versions :
-      nodejs : 12
     commands : 
       - echo "installing something"
 
@@ -20,6 +18,5 @@ phases :
       - echo "we are in post build phase"
 
 artifacts:
-  type: zip
   paths:
-    - '*'
+    - '**/*'
