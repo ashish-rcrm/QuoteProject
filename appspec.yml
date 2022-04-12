@@ -6,27 +6,17 @@ files :
   #  this is where httpd expects our index file to be
 hooks:
   BeforeInstall:
-    - location : scripts/install_dependencies.sh
-      timeout : 300
-      runas : root
-  
-  AfterInstall :
-    - location : scripts/after_install.sh
-      timeout : 300
-      runas : root
-    
-   
-  ApplicationStart:
-    - location : scripts/start_server.sh
-      timeout : 300
-      runas : root
-   
+    - location: scripts/install_dependencies.sh
+      runas: ec2-user
   ApplicationStop:
-    - location : scripts/stop_server.sh
-      timeout : 300
-      runas : root
-    
-   ValidateService:
-    - location : scripts/validate_service.sh
-      timeout : 300
-      runas : root
+    - location: scripts/stop_server.sh
+      runas: ec2-user
+  ApplicationStart:
+    - location: scripts/start_server.sh
+      runas: ec2-user
+  AfterInstall:
+    - location: scripts/after_install.sh
+      runas: ec2-user
+  ApplicationStart:
+    - location: scripts/validate_service.sh
+      runas: ec2-user
