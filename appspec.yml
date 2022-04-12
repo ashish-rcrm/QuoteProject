@@ -2,7 +2,7 @@ version : 0.0
 os : linux
 files :
   - source : /index.html
-   destination : /var/www/html
+    destination : /var/www/html
   #  this is where httpd expects our index file to be
 hooks:
   BeforeInstall:
