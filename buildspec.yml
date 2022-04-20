@@ -1,22 +1,19 @@
-version : 0.2
-phases : 
+version: 0.2
+phases:
   install:
     runtime-versions:
       nodejs: 14
-    commands : 
-      - echo "installing something"
-
-  pre_build :
-    commands :
+  pre_build:
+    commands:
       - echo "we are in pre build phase"
       - npm install
-  build :
+  build:
     commands:
       - echo "we are in build block"
       - echo "we will run some tests"
       - npm run build
-  post_build :
-    commands :
+  post_build:
+    commands:
       - echo "we are in post build phase"
 
 artifacts:
