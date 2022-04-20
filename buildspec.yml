@@ -3,9 +3,12 @@ phases:
   install:
     runtime-versions:
       nodejs: 14
+    commands:
+      - node -v
   pre_build:
     commands:
       - echo "we are in pre build phase"
+      - node -v
       - npm install
   build:
     commands:
